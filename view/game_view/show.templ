@@ -1,0 +1,15 @@
+package game
+
+import (
+	"github.com/Davilopesm/cblol-schedule-go/view/game_view/layout"
+	"github.com/Davilopesm/cblol-schedule-go/model"
+	"github.com/Davilopesm/cblol-schedule-go/view/game_view/component"
+)
+
+templ Show(games []model.Game) {
+	@layout.Base() {
+		for _, game := range games {
+			@components.Card(game)
+		}
+	}
+}

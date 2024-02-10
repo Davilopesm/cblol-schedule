@@ -1,0 +1,21 @@
+package components
+
+import "github.com/Davilopesm/cblol-schedule-go/model"
+
+templ Card(game model.Game) {
+	<tbody>
+		<tr>
+			<td>{ game.Time.Format("2006-01-02") }</td>
+			<td>{ game.Time.Format("15:04:05") }</td>
+			<td>{ game.FirstTeam.Name } vs { game.SecondTeam.Name }</td>
+			<td>Stadium X</td>
+			<td>
+				<div class="team-info">
+					{ game.FirstTeam.Wins } win | { game.FirstTeam.Loses } loss
+					<br/>
+					{ game.SecondTeam.Wins } win | { game.SecondTeam.Loses } loss
+				</div>
+			</td>
+		</tr>
+	</tbody>
+}
