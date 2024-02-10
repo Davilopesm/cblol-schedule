@@ -1,6 +1,6 @@
 # CBLOL Schedule App
 
-![CBLOL Logo](https://upload.wikimedia.org/wikipedia/pt/b/bc/CBLOL_logo_2022.png)
+![CBLOL Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Y4A29Fo3SfI8AeFJax3Uj9ulXumF388FWYtkf0QDBg&s)
 
 ## Overview
 
