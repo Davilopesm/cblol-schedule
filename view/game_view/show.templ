@@ -8,8 +8,6 @@ import (
 
 templ Show(games []model.Game) {
 	@layout.Base() {
-		for _, game := range games {
-			@components.Card(game)
-		}
+		@components.Card(games)
 	}
 }

@@ -1,0 +1,10 @@
+{
+	"name": "cblol-schedule",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Davi Mezencio",
+	"license": "ISC",
+	"devDependencies": {
+		"serverless-offline": "^13.3.3"
+	}
+}

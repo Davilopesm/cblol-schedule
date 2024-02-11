@@ -1,10 +1,17 @@
 package handler
 
 import (
+	"context"
+	"os"
+
 	"github.com/a-h/templ"
-	"github.com/labstack/echo/v4"
 )
 
-func render(c echo.Context, component templ.Component) error {
-	return component.Render(c.Request().Context(), c.Response())
+func render(c context.Context, component templ.Component) error {
+	return component.Render(context.Background(), os.Stdout)
+}
+
+func renderToString(c context.Context, component templ.Component) string {
+	html, _ := templ.ToGoHTML(context.Background(), component)
+	return string(html)
 }

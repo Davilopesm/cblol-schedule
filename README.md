@@ -4,7 +4,7 @@
 
 ## Overview
 
-This application showcases the schedule for the Campeonato Brasileiro de League of Legends (CBLOL) in 2024. Developed using the Go programming language and [Go Templ](https://templ.guide/)
+This application showcases the schedule for the Campeonato Brasileiro de League of Legends (CBLOL) in 2024.
 
 ## Features
 
@@ -13,8 +13,8 @@ This application showcases the schedule for the Campeonato Brasileiro de League 
 ## Technologies Used
 
 - Go (Programming Language)
-- Go Templ (HTML Templating)
-- [Echo](https://echo.labstack.com/) (Web Framework)
+- [Go Templ](https://templ.guide/)
+- [Echo](https://echo.labstack.com/)
 
 ## How to Run
 

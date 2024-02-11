@@ -1,0 +1,47 @@
+service: cblol-schedule
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: local
+  region: eu-west-1
+
+## RUN LOCAL
+functions:
+  showGames:
+    handler: cmd/main.man
+    package:
+      include:
+        - ./bin/main.main
+    events:
+      - http:
+          path: /games
+          method: get
+## DEPLOY TO AWS
+# service: cblol-schedule
+
+# plugins:
+#   - serverless-offline
+
+# provider:
+#   name: aws
+#   runtime: go1.x
+#   stage: local
+#   region: eu-west-1
+
+# package:
+#   exclude:
+#     - ./**
+#   include:
+#     - ./bin/**
+
+# functions:
+#   showGames:
+#     handler: bin/main
+#     events:
+#       - http:
+#           path: /games
+#           method: get

@@ -1,14 +1,23 @@
 package components
 
-import "github.com/Davilopesm/cblol-schedule-go/model"
+import (
+	"github.com/Davilopesm/cblol-schedule-go/model"
+)
 
-templ Card(game model.Game) {
-	<tbody>
+templ Card(games []model.Game) {
+	for i, game := range games {
+		if i%10 == 0 {
+			<tr>
+				<td colspan="4" style="text-align: center;">Week { game.Week }</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align: center;">Saturday</td>
+			</tr>
+		}
 		<tr>
-			<td>{ game.Time.Format("2006-01-02") }</td>
-			<td>{ game.Time.Format("15:04:05") }</td>
+			<td>{ game.Time.Format("02/01/2006") }</td>
+			<td>{ game.Time.Format("15h") }</td>
 			<td>{ game.FirstTeam.Name } vs { game.SecondTeam.Name }</td>
-			<td>Stadium X</td>
 			<td>
 				<div class="team-info">
 					{ game.FirstTeam.Wins } win | { game.FirstTeam.Loses } loss
@@ -17,5 +26,10 @@ templ Card(game model.Game) {
 				</div>
 			</td>
 		</tr>
-	</tbody>
+		if i%5 == 4 {
+			<tr>
+				<td colspan="4" style="text-align: center;">Sunday</td>
+			</tr>
+		}
+	}
 }

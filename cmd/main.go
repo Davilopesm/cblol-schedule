@@ -1,19 +1,27 @@
 package main
 
 import (
-	"fmt"
+	"context"
+	"net/http"
 
 	"github.com/Davilopesm/cblol-schedule-go/handler"
-	"github.com/labstack/echo/v4"
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
-type DB struct{}
+func Handler(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+	gameHandler := handler.GameHandler{}
+
+	return events.APIGatewayProxyResponse{
+		StatusCode: http.StatusOK,
+		Body:       gameHandler.HandleGameShow(ctx),
+		Headers: map[string]string{
+			"Content-Type": "text/html",
+		},
+	}, nil
+
+}
 
 func main() {
-	app := echo.New()
-
-	gameHandler := handler.GameHandler{}
-	app.GET("/games", gameHandler.HandleGameShow)
-	app.Start(":3000")
-	fmt.Println("Working")
+	lambda.Start(Handler)
 }
