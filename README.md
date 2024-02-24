@@ -19,6 +19,8 @@ This application showcases the schedule for the Campeonato Brasileiro de League 
 - [Go Templ](https://templ.guide/)
 - [Serverless Framework](https://www.serverless.com/)
 
+**Note:** In this repo we are also using Node and NPM to facilitate our integration with the serverles framework
+
 ## How to Run
 
 1. **Clone the repository:**
