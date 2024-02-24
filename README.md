@@ -17,7 +17,6 @@ This application showcases the schedule for the Campeonato Brasileiro de League 
 
 - Go (Programming Language)
 - [Go Templ](https://templ.guide/)
-- [Echo](https://echo.labstack.com/)
 - [Serverless Framework](https://www.serverless.com/)
 
 ## How to Run
