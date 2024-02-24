@@ -9,6 +9,6 @@ import (
 
 type GameHandler struct{}
 
-func (h *GameHandler) HandleGameShow(c context.Context) string {
-	return renderToString(c, game_view.Show(model.Games))
+func (h *GameHandler) HandleGameShow(c context.Context, games []model.Game) string {
+	return renderToString(c, game_view.Show(games))
 }

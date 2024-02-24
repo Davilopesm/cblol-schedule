@@ -6,6 +6,8 @@
 
 This application showcases the schedule for the Campeonato Brasileiro de League of Legends (CBLOL) in 2024.
 
+**Note:** Bloated with unnecessary stuff just to improve Go with serverless learnings.
+
 ## Features
 
 - **Games Schedule**: View the date, time, teams, and current wins x loses of each team for each CBLOL game in 2024.
@@ -36,4 +38,7 @@ This application showcases the schedule for the Campeonato Brasileiro de League 
    make
    ```
 
-4. **Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the CBLOL schedule.**
+4. **Open your web browser and visit [http://localhost:3000/local/games](http://localhost:3000/local/games) to view the CBLOL schedule.**
+
+5. **Send a POST request to [http://localhost:3000/local/games](http://localhost:3000/local/games) to ADD games.**
+   5.1 **An example request can be seem in model/insert_game_example.json**

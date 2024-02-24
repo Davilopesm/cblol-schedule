@@ -8,40 +8,68 @@ provider:
   runtime: go1.x
   stage: local
   region: eu-west-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [gamesTable, Arn]
 
-## RUN LOCAL
-functions:
-  showGames:
-    handler: cmd/main.man
-    package:
-      include:
-        - ./bin/main.main
-    events:
-      - http:
-          path: /games
-          method: get
-## DEPLOY TO AWS
-# service: cblol-schedule
-
-# plugins:
-#   - serverless-offline
-
-# provider:
-#   name: aws
-#   runtime: go1.x
-#   stage: local
-#   region: eu-west-1
-
-# package:
-#   exclude:
-#     - ./**
-#   include:
-#     - ./bin/**
-
+# ## RUN LOCAL
 # functions:
-#   showGames:
-#     handler: bin/main
+#   getGames:
+#     handler: cmd/get-games/main.main
 #     events:
 #       - http:
 #           path: /games
 #           method: get
+#   createGames:
+#     handler: cmd/create-games/main.main
+#     events:
+#       - http:
+#           path: /games
+#           method: post
+
+## RUN ON AWS
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  showGames:
+    handler: bin/get-games/main
+    events:
+      - http:
+          path: /games
+          method: get
+  createGames:
+    handler: bin/create-games/main
+    events:
+      - http:
+          path: /games
+          method: post
+resources:
+  Resources:
+    gamesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: games
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: Week
+            AttributeType: S
+          - AttributeName: Time
+            AttributeType: S
+        KeySchema:
+          - AttributeName: Week
+            KeyType: HASH
+          - AttributeName: Time
+            KeyType: RANGE

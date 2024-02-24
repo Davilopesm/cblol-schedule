@@ -1,0 +1,72 @@
+[
+	{
+		"FirstTeam": {
+			"Name": "Red Canids",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"SecondTeam": {
+			"Name": "Vivo Keyd Stars",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"Time": "03/03/2024 at 13h",
+		"Week": "7"
+	},
+	{
+		"FirstTeam": {
+			"Name": "KaBuM! Esports",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"SecondTeam": {
+			"Name": "Liberty",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"Time": "03/03/2024 at 14h",
+		"Week": "7"
+	},
+	{
+		"FirstTeam": {
+			"Name": "FURIA",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"SecondTeam": {
+			"Name": "INTZ",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"Time": "03/03/2024 at 15h",
+		"Week": "7"
+	},
+	{
+		"FirstTeam": {
+			"Name": "LOS",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"SecondTeam": {
+			"Name": "Pain Gaming",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"Time": "03/03/2024 at 16h",
+		"Week": "7"
+	},
+	{
+		"FirstTeam": {
+			"Name": "Fluxo",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"SecondTeam": {
+			"Name": "LOUD",
+			"Wins": "X",
+			"Loses": "X"
+		},
+		"Time": "03/03/2024 at 17h",
+		"Week": "7"
+	}
+]

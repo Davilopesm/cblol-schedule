@@ -6,17 +6,9 @@ import (
 
 templ Card(games []model.Game) {
 	for i, game := range games {
-		if i%10 == 0 {
-			<tr>
-				<td colspan="4" style="text-align: center;">Week { game.Week }</td>
-			</tr>
-			<tr>
-				<td colspan="4" style="text-align: center;">Saturday</td>
-			</tr>
-		}
+		@dayOfWeek(i, game.Week)
 		<tr>
-			<td>{ game.Time.Format("02/01/2006") }</td>
-			<td>{ game.Time.Format("15h") }</td>
+			<td>{ game.Time }</td>
 			<td>{ game.FirstTeam.Name } vs { game.SecondTeam.Name }</td>
 			<td>
 				<div class="team-info">
@@ -26,10 +18,20 @@ templ Card(games []model.Game) {
 				</div>
 			</td>
 		</tr>
-		if i%5 == 4 {
-			<tr>
-				<td colspan="4" style="text-align: center;">Sunday</td>
-			</tr>
-		}
+	}
+}
+
+templ dayOfWeek(i int, week string) {
+	if i%10 == 5 {
+		<tr>
+			<td colspan="4" style="text-align: center;">Sunday</td>
+		</tr>
+	} else if i%10 == 0 {
+		<tr>
+			<td colspan="4" style="text-align: center;"><b>Week { week } </b></td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">Saturday</td>
+		</tr>
 	}
 }
