@@ -43,7 +43,7 @@ This application showcases the schedule for the Campeonato Brasileiro de League 
 4. **Open your web browser and visit [http://localhost:3000/local/games](http://localhost:3000/local/games) to view the CBLOL schedule.**
 
 5. **Send a POST request to [http://localhost:3000/local/games](http://localhost:3000/local/games) to ADD games.**
-   5.1 **An example request can be seem in model/insert_game_example.json**
+   5.1 **We have an example request in model/insert_game_example.json**
 
 6. **Build and Deploy to AWS**
 
